@@ -204,7 +204,7 @@ public class StudentServiceImpl implements StudentService {
                 }
             }
         }
-        return null;
+        return "Туура эмес";
     }
 
     @Override
@@ -235,7 +235,7 @@ public class StudentServiceImpl implements StudentService {
             group.students.removeIf(student -> student.getEmail().equalsIgnoreCase(email));
             return "successfully deleted";
         }
-        return null;
+        return "Туура эмес";
     }
 
     @Override

@@ -16,7 +16,6 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -63,12 +62,7 @@ public class Main {
                                     case 3 -> {
                                         System.out.print("Группанын атын жазыныз: ");
                                         String groupName = scanForStr.nextLine();
-                                        String groupList = group.upDateGroup(groupName);
-                                        if (groupList == null) {
-                                            System.out.println("туура эмес жаздыныз!!!");
-                                        } else {
-                                            System.out.println(groupList);
-                                        }
+                                        System.out.println(group.upDateGroup(groupName));
                                     }
                                     case 4 -> System.out.println(group.getAllGroups());
                                     case 5 -> {
@@ -82,12 +76,7 @@ public class Main {
                                     case 6 -> {
                                         System.out.print("Студенттин email жазыныз: ");
                                         String email = scanForStr.nextLine();
-                                        String students = student.upDateStudentName(email);
-                                        if (students == null) {
-                                            System.out.println("туура эмес жаздыныз!");
-                                        } else {
-                                            System.out.println(students);
-                                        }
+                                        System.out.println(student.upDateStudentName(email));
                                     }
                                     case 7 -> {
                                         System.out.print("Студенттин атын жазыныз: ");
@@ -122,12 +111,7 @@ public class Main {
                                     case 10 -> {
                                         System.out.print("Студенттин email жазыныз: ");
                                         String email = scanForStr.nextLine();
-                                        String deleted = student.deleteStudent(email);
-                                        if (deleted == null) {
-                                            System.out.println("туура эмес жаздыныз!");
-                                        } else {
-                                            System.out.println(deleted);
-                                        }
+                                        System.out.println(student.deleteStudent(email));
                                     }
                                     case 11 -> {
                                         System.out.print("Группанын атын жазыныз: ");
@@ -162,22 +146,12 @@ public class Main {
                                     case 14 -> {
                                         System.out.print("Сабактын ID жазыныз: ");
                                         long id = scanner.nextLong();
-                                        String lessonById = lesson.deleteLessonById(id);
-                                        if (lessonById == null) {
-                                            System.out.println("туура эмес жаздыныз!");
-                                        } else {
-                                            System.out.println(lessonById);
-                                        }
+                                        System.out.println(lesson.deleteLessonById(id));
                                     }
                                     case 15 -> {
                                         System.out.print("Группанын атын жазыныз: ");
                                         String groupName = scanForStr.nextLine();
-                                        String deleteGroup = group.deleteGroup(groupName);
-                                        if (deleteGroup == null) {
-                                            System.out.println("туура эмес жаздыныз!");
-                                        } else {
-                                            System.out.println(deleteGroup);
-                                        }
+                                        System.out.println(group.deleteGroup(groupName));
                                     }
                                 }
                             } catch (InputMismatchException e) {
@@ -205,7 +179,7 @@ public class Main {
 
     private static void timeMenu() {
         ZonedDateTime currentDateTime = ZonedDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault());
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 
         int currentHour = currentDateTime.getHour();
 

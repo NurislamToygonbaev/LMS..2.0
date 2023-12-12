@@ -85,6 +85,6 @@ public class LessonServiceImpl implements LessonService {
             group.lessons.removeIf(lesson -> lesson.getId() == id);
             return "Successfully deleted";
         }
-        return null;
+        return "Туура эмес";
     }
 }

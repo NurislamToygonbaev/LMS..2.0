@@ -114,7 +114,7 @@ public class GroupServiceImpl implements GroupService {
                 return "successfully updated";
             }
         }
-        return null;
+        return "туура эмес";
     }
 
     @Override
@@ -125,7 +125,7 @@ public class GroupServiceImpl implements GroupService {
                 return "successfully deleted";
             }
         }
-        return null;
+        return "Туура эмес";
     }
 
 
